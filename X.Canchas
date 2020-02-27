@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int max(int a,int b)
+{
+    if( a > b)
+        return a;
+    else
+        return b;
+}
+int min(int a,int b)
+{
+    if(a > b)
+        return b;
+    else
+        return a;
+}
+
+
+int main()
+{
+    int a,b,c,d,a1,a2,a3,a4, b1,b2,b3,b4, area1,area2,area3;
+    scanf("%d %d %d %d",&a,&b,&c,&d);
+    scanf("%d %d %d %d",&a1,&a2,&a3,&a4);
+
+    b1 = max(a,a1);
+    b2 = max(b,a2);
+
+    b3 = min(c,a3);
+    b4 = min(d,a4);
+
+    area1 = (c-a) * (d-b);
+    area2 = (a3-a1)  * (a4-a2);
+
+    area3 = b1 < b3 && b2 < b4? (b3-b1) * (b4-b2):0;
+
+        printf("%d",area1 + area2 - area3);
+    return 0;
+}
