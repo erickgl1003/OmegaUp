@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int a,b,c,e,f = 0,g = 0,h  =0,i = 0,j = 0;
+int d[501][501];
+    int floodfill(int x,int y)
+    {
+       if(x < 0 || x > a || y < 0 || y >b )
+            return 0;
+       if(d[x][y] == 0)
+            return 0;
+            
+       j+= d[x][y];
+       d[x][y] = 0;
+       floodfill(x+1,y);
+       floodfill(x-1,y);
+       floodfill(x,y+1);
+       floodfill(x,y-1);
+       
+       return j;
+
+    }
+    int main()
+{
+        scanf("%d %d",&a,&b);
+
+        for(c = 0;c < a; c++) 
+		{
+            for(e = 0;e < b; e++)
+            {
+                scanf("%d",&d[c][e]);
+            }
+        }
+        for(c = 0;c < a;c++)
+        {
+            for(e = 0; e < b;e++)
+            {
+              if(d[e][c] > 0)
+              {
+                  f++;
+                  floodfill(e,c);
+                  
+                  if( f == 1)
+                  {
+                    h = j;
+                    i = f;
+                  }
+
+                  if(j > h)
+                  {
+                      h = j;
+                      i = f;
+                  }
+                  j = 0;
+              }
+          }
+      }
+      
+      printf("%d %d",i,h);
+      return 0;
+  }
