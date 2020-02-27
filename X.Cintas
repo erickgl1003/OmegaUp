@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0,i=0,j=0,k=0,l=0,m=0,n=0,o=0,p=0,q=0,r=0,s=0,t=0,u=0,v=0,a1=0,a2=0;
+    char x='x',y='y',z='z';
+    char ar[1000000];
+
+
+main(){
+
+    scanf("%d %d",&a,&b);
+    scanf("%d",&c);
+    u = c;
+    for(d =0; d < c;d++)
+    {
+        scanf("%d %d",&e,&f);
+
+        f = (f*(a+1))/(e+1);
+
+        ar[d] = f;
+    }
+     
+    for(d = 0;d < c;d++)
+    {
+        for(a1 = d; a1 < c;a1++)
+        {
+            if(a1-d +1 > u)
+            {
+                break;
+            }
+              a2 += ar[a1];
+            if(a1-d +1 <= u && a2 >= b)
+            {
+                u = a1-d +1;
+
+
+            }
+
+        }
+        a2 = 0;
+
+    }
+
+    printf("%d",u);
+
+
+
+    return 0;
+}
