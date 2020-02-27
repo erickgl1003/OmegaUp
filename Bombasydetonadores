@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int aa = 0, ab=0,ac=0,ad=0,ae=0,af=0,ag=0,ah=0,ai=0;
+    char a[1000];
+    char b[1000];
+    int c[26];
+    scanf("%d",&aa);
+    for( ab =0 ; ab < aa;ab++)
+    {
+        scanf(" %c",&a[ab]);
+    }
+    scanf("%d",&ac);
+    for( ad = 0; ad < ac;ad++)
+    {
+     scanf(" %c",&b[ad]);
+    }
+    for(ae = 0; ae < 26;ae++)
+    {
+        scanf("%d",&c[ae]);
+    }
+    for(af =0; af < aa;af++)
+    {
+        for(ag =0; ag < ac;ag++)
+        {
+            if(a[af] == b[ag])
+            {
+                b[ag] = 'a';
+                int ah = a[af] - 65;
+                ai += c[ah];
+                ag = ac;
+            }
+        }
+    }
+    printf("%d",ai);
+    return 0;
+}
