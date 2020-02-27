@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+int f,g,c,d,e;
+short int val[1001][10001];
+short int pes[1001];
+short int din[1001];
+int nap(int a,int b)
+{
+
+for(c = 0;c < a+1;c++)
+{
+    for(d = 0;d < b+1;d++)
+    {
+        if(pes[c] <= d)
+        {
+            if(c != 0)
+            {
+
+                val[c][d] = din[c]+ val[c-1][d-pes[c]];
+                if(val[c][d] < val[c-1][d])
+                val[c][d] = val[c-1][d];
+
+            }
+            else{
+
+
+                val[c][d] = din[c];
+            }
+        }
+        else
+        {
+
+            if(c !=0)
+            {
+                val[c][d] = val[c-1][d];
+
+            }
+            else
+                val[c][d] = 0;
+        }
+
+        if(c == a && d == b)printf("%d",val[c][d]);
+
+    }
+
+}
+
+return val[c][d];
+}
+
+
+int main()
+{
+    int pa,pb,pc,pd;
+     scanf("%d %d",&pa,&pb);
+
+
+for(pc = 0;pc < pb;pc++)
+{
+    scanf("%d %d",&pes[pc],&din[pc]);
+}
+int res = 10;
+res = nap(pb,pa);
+
+    return 0;
+}
