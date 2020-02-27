@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double a,b,e=0;
+    int c,f,g,h;
+    double d;
+
+    scanf("%lf %lf",&a,&b);
+
+    d= b/(a-1);
+    c= b/(a-1);
+
+    if(d > c) e=c;
+    else e = c-1;
+
+    f= b+e;
+    g=b+c;
+    printf("%d %d", f,g);
+
+    return 0;
+}
