@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+    int ar[100000];
+
+    int a,b,c=0,d=0,e=0,f=0,g=0,h=0,i=0,j=0;
+    char a1='x';
+    scanf("%d %d",&a,&b);
+    scanf("%d",&h);
+    for(c =0;c < a-1;c++)
+    {
+        scanf("%d",&g);
+        ar[c] = g-h;
+        h = g;
+
+    }
+
+   f=0;
+
+    for(d =0;d < b-1;d++)
+    {
+        f += ar[d];
+
+    }
+    j = f;
+
+    for(c =0;c < a-b;c = c)
+    {
+        f= (f-ar[c]+ar[c+b-1]);
+       if(f > j)
+       {
+          j = f;
+
+            c++;
+       }
+       else{
+
+         c++;
+       }
+    }
+   printf("%d",j);
+    return 0;
+}
