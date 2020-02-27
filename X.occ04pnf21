@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int c =0,d =0,e =0,f=0,g=0,h=0;
+   char a[1000];
+   char b[1000];
+   gets(a);
+   gets(b);
+   while(b[c] != '\0')
+   {
+       c++;
+   }
+   while(a[e] != '\0')
+   {
+       e++;
+   }
+   for(d =0;d < c;d++)
+   {
+       for(f=g;f <e;f++ )
+       {
+           if(b[d] == a[f])
+           {
+               g=f;
+               for(f=f;f < e;f++)
+               {
+                   a[f] = a[f+1];
+               }
+
+           }
+       }
+   }
+   printf("%s",a);
+
+    return 0;
+}
